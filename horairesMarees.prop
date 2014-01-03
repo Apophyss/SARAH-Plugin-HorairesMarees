@@ -1,0 +1,10 @@
+{
+  "modules" : { 
+    "horairesMarees"  : {
+      "description": "Donne les horaires des marées du port paramétré",
+      "version": "1.0",
+      "id": "127",
+      "day": "0"
+    }
+  }
+}

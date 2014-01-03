@@ -1,0 +1,32 @@
+﻿<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleHorairesMarees" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleHorairesMarees" scope="public">
+    <example>Sarah quelles sont les horaires des marées pour demain ?</example>
+    <tag>out.action=new Object(); </tag>
+    <tag>out._attributes.dictation="false";</tag>
+    <item>Sarah</item>
+    
+    <one-of>
+      <item>Donnes moi les horaires des marées</item>
+      <item>quelles sont les horaires des marées</item>
+    </one-of>
+    <item repeat="0-1">
+      <one-of>
+        <item>aujourd'hui<tag>out.action.day="0";</tag></item>
+        <item>demain<tag>out.action.day="1";</tag></item>
+        <item>après demain<tag>out.action.day="2";</tag></item>
+        <item>lundi<tag>out.action.day="lundi";</tag></item>
+        <item>mardi<tag>out.action.day="mardi";</tag></item>
+        <item>mercredi<tag>out.action.day="mercredi";</tag></item>
+        <item>jeudi<tag>out.action.day="jeudi";</tag></item>
+        <item>vendredi<tag>out.action.day="vendredi";</tag></item>
+        <item>samedi<tag>out.action.day="samedi";</tag></item>
+        <item>dimanche<tag>out.action.day="dimanche";</tag></item>
+      </one-of>
+    </item>
+
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/horairesMarees";</tag>
+  </rule>
+
+ 
+
+</grammar>

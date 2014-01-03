@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#plugin-menu .plugin-nav a").click(function () {
+            jQuery("#plugin-menu .content > ul").hide();
+            jQuery("#plugin-menu .plugin-nav ul li").removeClass("active");
+            jQuery(this).parent().addClass("active");
+            jQuery("#" + jQuery(this).data("toggle")).show();
+            return false;
+        });
+    });
+</script>
+
+<p class="page-header">
+    <span class="lead">Horaires des Marées </span><br/>
+    
+</p>
+
+<div id="plugin-menu" class="row-fluid">
+    <!-- Navigation -->
+    <div class="span3 well plugin-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Documentation</li>
+            <li class="active"><a href="" data-toggle="plugin-doc">Horaires des marées</a></li>
+            
+        </ul>
+    </div>
+    <!-- Content -->
+    <div class="span9 content">
+
+        <ul class="unstyled" id="plugin-doc">
+            Editez le fichier <em>"horairesMarees.prop"</em>
+            <li><i class="icon-play-circle"></i> Avec l'identifiant du port désiré <em>("id": "127" pour La Rochelle)</em></li>
+            <li><i class="icon-play-circle"></i> Avec le jour par défaut pour lequel vous souhaitez avoir les horaires des marées <em>("day": "0" pour Aujourd'hui OU "day": "1" pour demain OU "day": "2" pour après-demain...)</em></li><br/>
+            <li><i class="icon-play-circle"></i> Comment récupérer l'identifiant du port ?</li>
+            - Utilisez cette URL : <em><a target="_blank" href="http://maree.info/">"http://maree.info/"</a></em>.<br/>
+            - selectionner le port de votre choix. vous allez être redirigé sur la page correspondante , dans l'url il y aura le numéro du port à saisir dans horairesMarees.prop. Exemple pour La Rochelle  ce sera "127" => http://maree.info/127<br/>
+          <br/>
+           
+        </ul>
+
+    </div>
+</div>
